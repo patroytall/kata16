@@ -6,11 +6,12 @@ import java.util.Map;
 public class ItemService {
     private static ItemService instance;
 
-    // Singleton to replace autowire or micro service
-    synchronized public static ItemService getItemService() {
-        if (instance == null) {
-            instance = new ItemService();
-        }
+    public static void initialize() {
+        instance = new ItemService();
+    }
+
+    // Singleton instead of autowire or micro service
+    public static ItemService getItemService() {
         return instance;
     }
 

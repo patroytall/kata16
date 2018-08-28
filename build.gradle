@@ -1,4 +1,13 @@
+repositories {
+    jcenter()
+}
+
 apply plugin: "java"
 apply plugin:'application'
 
 mainClassName = "org.roy.kata16.Main"
+
+dependencies {
+    testCompile "junit:junit:4.12"
+    testCompile "org.mockito:mockito-core:2.+"
+}
