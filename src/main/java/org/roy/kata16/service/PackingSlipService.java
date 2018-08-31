@@ -13,7 +13,7 @@ public class PackingSlipService implements PurchaseListener, ChainedService {
 
     @Override
     public void onPurchase(OrderItem orderItem) {
-        PackingSlip packingSlip = new PackingSlip();
+        PackingSlip packingSlip = new PackingSlip(orderItem.getItem());
 
         if (orderItem.getItem().isPhysicalProduct()) {
             ServiceLocator.getShippingService().ship(packingSlip);

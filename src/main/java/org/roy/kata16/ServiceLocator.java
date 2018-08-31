@@ -1,6 +1,5 @@
 package org.roy.kata16;
 
-import org.roy.kata16.entity.PackingSlip;
 import org.roy.kata16.external.*;
 import org.roy.kata16.service.PackingSlipService;
 import org.roy.kata16.service.PurchaseService;

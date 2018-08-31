@@ -3,11 +3,10 @@ package org.roy.kata16.test.main;
 import org.roy.kata16.entity.Item;
 
 public class TestItem implements Item {
-    private final String name;
-    private boolean physicalProduct;
-    private boolean book;
-    private boolean membership;
-    private boolean video;
+    protected final String name;
+    protected boolean physicalProduct;
+    protected boolean book;
+    protected boolean membership;
 
     public TestItem(String name) {
         this.name = name;
@@ -20,20 +19,25 @@ public class TestItem implements Item {
 
     @Override
     public boolean isPhysicalProduct() {
-        return false;
+        return physicalProduct;
     }
 
     @Override
     public boolean isBook() {
-        return false;
+        return book;
     }
 
     @Override
     public boolean isMembership() {
-        return false;
+        return membership;
     }
 
-    private class Builder extends TestItem {
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public static class Builder extends TestItem {
         public Builder(String name) {
             super(name);
         }
