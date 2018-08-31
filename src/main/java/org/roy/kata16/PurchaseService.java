@@ -1,5 +1,7 @@
 package org.roy.kata16;
 
+import org.roy.kata16.entity.OrderItem;
+
 import java.util.ArrayList;
 import java.util.List;
 

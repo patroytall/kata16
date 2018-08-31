@@ -1,5 +1,30 @@
 # Kata16: Business Rules
 
+This repository demonstrates approaches to handle the complex and changing requirements of the Kata16 problem:
+* Inversion of control using a publish/subscribe observer pattern
+* Separation of concerns
+* Service-orientation
+* Service statelessness
+* Dependency stubbing
+* Test hook
+* Service locator
+
+# Problem Statement
+
+## Implementation Guidelines
+
+Implement the core logic described in http://codekata.com/kata/kata16-business-rules/ as a Java
+service whose usage is demonstrated and validated by tests. Stub dependencies to external
+systems as needed.
+
+## Objectives
+
+How can you tame these wild business rules? How can you build a system that will be flexible enough to handle both the complexity and the need for change? And how can you do it without condemming yourself to years and years of mindless support?
+
+# Case Details
+
+One to two hours is a good timebox to see where the exercise evolves to.
+
 How can you tame a wild (and changing) set of business rules?
 
 Imagine you’re writing an order processing application for a large company. In the past, this company used a fairly random mixture of manual and ad-hoc automated business practices to handle orders; they now want to put all these various ways of hanadling orders together into one whole: your application. However, they (and their customers) have come to cherish the diversity of their business rules, and so they tell you that you’ll have to bring all these rules forward into the new system.
@@ -21,6 +46,3 @@ And each day, to your horror, you gather more and more pages of these rules.
 
 Now you’re faced with implementing this system. The rules are complicated, and fairly arbitrary. What’s more, you know that they’re going to change: once the system goes live, all sorts of special cases will come out of the woodwork.
 
-# Objectives
-
-How can you tame these wild business rules? How can you build a system that will be flexible enough to handle both the complexity and the need for change? And how can you do it without condemming yourself to years and years of mindless support?

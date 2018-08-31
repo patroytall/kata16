@@ -1,4 +1,4 @@
-package org.roy.kata16;
+package org.roy.kata16.entity;
 
 public class MembershipOrderDetails {
     private final String membershipId;

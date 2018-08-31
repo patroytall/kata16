@@ -1,4 +1,6 @@
-package org.roy.kata16;
+package org.roy.kata16.external;
+
+import org.roy.kata16.entity.Item;
 
 import java.util.HashMap;
 import java.util.Map;

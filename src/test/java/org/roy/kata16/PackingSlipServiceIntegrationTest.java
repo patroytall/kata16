@@ -19,6 +19,7 @@ public class PackingSlipServiceIntegrationTest {
     public void onPurchaseIsCalledWhenProcessPurchaseIsInvoked() {
         PackingSlipService packingSlipService = Mockito.spy(new PackingSlipService());
         PackingSlipService.testInitialize(packingSlipService);
+        // TODO: Replace null with mock
         purchaseService.processPurchase(null);
         verify(packingSlipService).onPurchase(null);
     }

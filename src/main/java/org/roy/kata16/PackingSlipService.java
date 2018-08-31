@@ -1,5 +1,8 @@
 package org.roy.kata16;
 
+import org.roy.kata16.entity.OrderItem;
+import org.roy.kata16.entity.PackingSlip;
+
 public class PackingSlipService implements PurchaseListener {
     private static PackingSlipService instance;
 
@@ -24,5 +27,10 @@ public class PackingSlipService implements PurchaseListener {
 
     @Override
     public void onPurchase(OrderItem orderItem) {
+        PackingSlip packingSlip = new PackingSlip();
+
+        if (orderItem.getItem().isPhysicalProduct()) {
+            ServiceLocator.getShippingService().ship(packingSlip);
+        }
     }
 }
