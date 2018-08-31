@@ -2,11 +2,13 @@
 
 This repository demonstrates approaches to handle the complex and changing requirements of the Kata16 problem:
 * Inversion of control using a publish/subscribe observer pattern
+* Builder pattern
 * Separation of concerns
 * Service-orientation
 * Service statelessness
 * Dependency stubbing
 * Test hook
+* Mocks
 * Service locator
 
 # Problem Statement

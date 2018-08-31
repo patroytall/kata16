@@ -8,6 +8,9 @@ import java.util.Map;
 public class ItemService {
     private static ItemService instance;
 
+    /**
+     * Can be called more than once.
+     */
     public static void initialize() {
         instance = new ItemService();
     }
@@ -20,25 +23,21 @@ public class ItemService {
     private final Map<String, Item> inventory = new HashMap<>();
 
     private ItemService() {
-        addItem("a01a5649-2a45-4938-84af-9889406a26ce", new InventoryItem.PrivateBuilder("Learning to Ski")
-                .setPhysicalProduct().get());
-        addItem("62ae4333-04a5-4f65-a1a9-bfd0593aad95", new InventoryItem.PrivateBuilder("First Aid")
-                .setPhysicalProduct().get());
+        addItem("a01a5649-2a45-4938-84af-9889406a26ce", new ItemStub("Learning to Ski", true));
+        addItem("62ae4333-04a5-4f65-a1a9-bfd0593aad95", new ItemStub("First Aid", false));
     }
 
     private void addItem(String id, Item item) {
         inventory.put(id, item);
     }
 
-    private static class InventoryItem implements Item {
+    private static class ItemStub implements Item {
         private final String name;
-        private boolean physicalProduct;
-        private boolean book;
-        private boolean membership;
-        private boolean video;
+        private final boolean isPhysicalProduct;
 
-        public InventoryItem(String name) {
+        public ItemStub(String name, boolean isPhysicalProduct) {
             this.name = name;
+            this.isPhysicalProduct = isPhysicalProduct;
         }
 
         @Override
@@ -48,7 +47,7 @@ public class ItemService {
 
         @Override
         public boolean isPhysicalProduct() {
-            return false;
+            return isPhysicalProduct;
         }
 
         @Override
@@ -59,33 +58,6 @@ public class ItemService {
         @Override
         public boolean isMembership() {
             return false;
-        }
-
-        private static class PrivateBuilder {
-            private final InventoryItem inventoryItem;
-
-            public PrivateBuilder(String name) {
-                this.inventoryItem = new InventoryItem(name);
-            }
-
-            public PrivateBuilder setPhysicalProduct() {
-                inventoryItem.physicalProduct = true;
-                return this;
-            }
-
-            public PrivateBuilder setBook() {
-                inventoryItem.book = true;
-                return this;
-            }
-
-            public PrivateBuilder setMembership() {
-                inventoryItem.membership = true;
-                return this;
-            }
-
-            public InventoryItem get() {
-                return inventoryItem;
-            }
         }
     }
 }
